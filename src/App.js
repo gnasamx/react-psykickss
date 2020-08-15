@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import PageWrapper from "./components/PageWrapper";
-// import Button from "./components/Button/button";
-import { Flex, Item } from "./components/FlexGrid";
-import myList from "./example.json";
+import Button from "./components/Button/button";
 import { Row, Col } from "./components/Grid";
 
 function App() {
@@ -11,41 +9,24 @@ function App() {
       <PageWrapper>
         <p>Hello</p>
         <Row>
-          <Col xl={6} lg={4} md={4} sm={6}>
-            <div
-              style={{
-                textAlign: "center",
-                width: "100%",
-                border: "1px solid #eee",
-                background: "#eee",
-              }}
-            >
-              Hello
-            </div>
+          <Col md={4} sm={6}>
+            <Button primary block>
+              Button
+            </Button>
+            <p>
+              The initial value of the flex-wrap property is nowrap. This means
+              that if you have a set of flex items that are too wide for their
+              container, they will overflow it. If you want to cause them to
+              wrap once they become too wide you must add the flex-wrap property
+              with a value of wrap, or use the shorthand flex-flow with values
+              of row wrap or column wrap.
+            </p>
           </Col>
-          <Col xl={6} lg={4} md={4} sm={6}>
-            <div
-              style={{
-                textAlign: "center",
-                width: "100%",
-                border: "1px solid #eee",
-                background: "#eee",
-              }}
-            >
-              Hello
-            </div>
+          <Col md={4} sm={6}>
+            Hello
           </Col>
-          <Col xl={6} lg={4} md={4} sm={6}>
-            <div
-              style={{
-                textAlign: "center",
-                width: "100%",
-                border: "1px solid #eee",
-                background: "#eee",
-              }}
-            >
-              Hello
-            </div>
+          <Col md={4} sm={6}>
+            Hello
           </Col>
         </Row>
       </PageWrapper>

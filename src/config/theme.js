@@ -23,4 +23,11 @@ export default {
     active: "0 6px 20px rgba(0,0,0,0.09)",
     button: "0 4px 12px rgba(0,0,0,0.08)",
   },
+  breakpoints: {
+    xs: 0,
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+  },
 };

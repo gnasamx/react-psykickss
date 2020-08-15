@@ -1,68 +1,41 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { percentage, respondTo } from "./utils";
 
 export const Row = styled.div`
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
   display: flex;
-  flex: 1 0 100%;
   flex-wrap: wrap;
-  margin-top: calc(var(--bs-gutter-y) * -1);
-  margin-right: calc(var(--bs-gutter-x) / -2);
-  margin-left: calc(var(--bs-gutter-x) / -2);
-
-  > * {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x) / 2);
-    padding-left: calc(var(--bs-gutter-x) / 2);
-    margin-top: var(--bs-gutter-y);
-  }
+  margin-right: -15px;
+  margin-left: -15px;
 `;
 
-const breakpoints = {
-  xs: 0,
-  sm: "576px",
-  md: "768px",
-  lg: "992px",
-  xl: "1200px",
-};
-
-export const respondTo = Object.keys(breakpoints).reduce(
-  (accumulator, label) => {
-    accumulator[label] = (...args) => css`
-      @media (min-width: ${breakpoints[label]}) {
-        ${css(...args)};
-      }
-    `;
-    return accumulator;
-  },
-  {}
-);
-
 export const Col = styled.div`
-  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  width: 100%;
 
   ${respondTo.xs`
-    width: ${({ xs }) => xs && `${(xs / 12) * 100}%`};
+    flex: ${({ xs }) => xs && `0 0 ${percentage(xs)}`};
+    max-width: ${({ xs }) => xs && percentage(xs)}
   `}
 
   ${respondTo.sm`
-    width: ${({ sm }) => sm && `${(sm / 12) * 100}%`};
+    flex: ${({ sm }) => sm && `0 0 ${percentage(sm)}`};
+    max-width: ${({ sm }) => sm && percentage(sm)}
   `}
 
   ${respondTo.md`
-    width: ${({ md }) => md && `${(md / 12) * 100}%`};
+    flex: ${({ md }) => md && `0 0 ${percentage(md)}`};
+    max-width: ${({ md }) => md && percentage(md)}
   `}
 
   ${respondTo.lg`
-    width: ${({ lg }) => lg && `${(lg / 12) * 100}%`};
+    flex: ${({ lg }) => lg && `0 0 ${percentage(lg)}`};
+    max-width: ${({ lg }) => lg && percentage(lg)}
   `}
 
   ${respondTo.xl`
-    width: ${({ xl }) => xl && `${(xl / 12) * 100}%`};
+    flex: ${({ xl }) => xl && `0 0 ${percentage(xl)}`};
+    max-width: ${({ xl }) => xl && percentage(xl)}
   `}
 `;
