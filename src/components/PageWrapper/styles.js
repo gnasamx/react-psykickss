@@ -4,7 +4,7 @@ import theme from "../../config/theme";
 export const Container = styled.div`
   background: ${theme.ui.default};
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1140px;
   display: flex;
   flex-direction: column;
 

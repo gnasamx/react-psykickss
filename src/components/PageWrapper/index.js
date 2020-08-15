@@ -3,6 +3,7 @@ import { Container, GridWrapper } from "./styles";
 
 export default ({ children }) => (
   <Container>
-    <GridWrapper>{children}</GridWrapper>
+    {/* <GridWrapper>{children}</GridWrapper> */}
+    {children}
   </Container>
 );

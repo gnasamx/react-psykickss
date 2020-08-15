@@ -19,11 +19,6 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
       sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  }
-
-  p {
-    margin: 0;
-  }
 
   a, button {
     text-decoration: none;
