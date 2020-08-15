@@ -1,9 +1,4 @@
 import React from "react";
 import { Container, GridWrapper } from "./styles";
 
-export default ({ children }) => (
-  <Container>
-    {/* <GridWrapper>{children}</GridWrapper> */}
-    {children}
-  </Container>
-);
+export default ({ children }) => <Container>{children}</Container>;

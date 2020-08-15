@@ -4,13 +4,26 @@ import theme from "../../config/theme";
 export const Container = styled.div`
   background: ${theme.ui.default};
   margin: 0 auto;
-  max-width: 1140px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
 
-  @media (min-width: 1280px) {
-    margin: 32px auto;
-    border-radius: 12px;
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
   }
 `;
 
