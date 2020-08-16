@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import PageWrapper from "./components/PageWrapper";
 import Button from "./components/Button/button";
 import { Row, Col } from "./components/Grid";
+import { ArrowRight, Search } from "./components/Icon";
 
 function App() {
   return (
@@ -23,10 +24,10 @@ function App() {
             </p>
           </Col>
           <Col md={4} sm={6}>
-            Hello
+            <ArrowRight size={24} />
           </Col>
           <Col md={4} sm={6}>
-            Hello
+            <Search size={32} color="blue" />
           </Col>
         </Row>
       </PageWrapper>
