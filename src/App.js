@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import PageWrapper from "./components/PageWrapper";
 import Button from "./components/Button/button";
 import { Row, Col } from "./components/Grid";
-import { ArrowRight } from "./components/Icon";
+import { ArrowRight, Search } from "./components/Icon";
 import Spinner from "./components/Spinner";
 
 function App() {
@@ -12,7 +12,10 @@ function App() {
         <p>Hello</p>
         <Row>
           <Col md={4} sm={6}>
-            <Button primary block>
+            <Button primary block iconLeft icon={<Search color="#fff" />}>
+              Button
+            </Button>
+            <Button outline icon={<ArrowRight color="blue" />} block>
               Button
             </Button>
             <p>
@@ -28,7 +31,7 @@ function App() {
             <ArrowRight size={24} />
           </Col>
           <Col md={4} sm={6}>
-            <Spinner size={24} color="green" />
+            <Spinner size={24} color="" />
           </Col>
         </Row>
       </PageWrapper>
