@@ -5,4 +5,6 @@ export const Svg = styled.svg`
   height: ${({ size }) => (size && `${size}px`) || "24px"};
   display: inline-block;
   fill: ${({ color }) => color || "#000"};
+
+  
 `;

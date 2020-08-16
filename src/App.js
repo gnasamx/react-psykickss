@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import PageWrapper from "./components/PageWrapper";
 import Button from "./components/Button/button";
 import { Row, Col } from "./components/Grid";
-import { ArrowRight, Search } from "./components/Icon";
+import { ArrowRight } from "./components/Icon";
+import Spinner from "./components/Spinner";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             <ArrowRight size={24} />
           </Col>
           <Col md={4} sm={6}>
-            <Search size={32} color="blue" />
+            <Spinner size={24} color="green" />
           </Col>
         </Row>
       </PageWrapper>
