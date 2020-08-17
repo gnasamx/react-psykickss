@@ -48,3 +48,13 @@ export function getBoxShadow({ primary, secondary, outline, state }) {
   const appearance = decideAppearance(primary, secondary, outline);
   return applyPropertyStyle("boxShadow", appearance, state);
 }
+
+export function getIconPosition({ iconLeft, iconRight }) {
+  if (iconRight) {
+    return "row";
+  } else if (iconLeft) {
+    return "row-reverse";
+  } else {
+    return "row";
+  }
+}

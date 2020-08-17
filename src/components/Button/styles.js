@@ -7,6 +7,7 @@ import {
   getColor,
   getWidth,
   getBoxShadow,
+  getIconPosition,
 } from "./getStyles";
 
 export const Button = styled.button`
@@ -16,6 +17,7 @@ export const Button = styled.button`
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  flex-direction: ${(props) => getIconPosition(props)};
   line-height: 1.2;
   color: ${(props) => getColor(props)};
   padding: ${(props) => getPadding(props)};
@@ -41,4 +43,9 @@ export const Button = styled.button`
   &:active {
     box-shadow: ${(props) => getBoxShadow({ state: "active", ...props })};
   }
+`;
+
+export const Space = styled.div`
+  height: 1px;
+  width: 0.5rem;
 `;

@@ -1,4 +1,4 @@
-import React from "react";
-import { Container, GridWrapper } from "./styles";
+import React from 'react'
+import {Container} from './styles'
 
-export default ({ children }) => <Container>{children}</Container>;
+export default ({children}) => <Container>{children}</Container>
