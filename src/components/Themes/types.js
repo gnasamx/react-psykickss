@@ -1,0 +1,26 @@
+// @flow
+
+export type SizingT = {
+  scale0: string,
+  scale100: string,
+  scale200: string,
+  scale300: string,
+  scale400: string,
+  scale500: string,
+  scale550: string,
+  scale600: string,
+  scale650: string,
+  scale700: string,
+  scale750: string,
+  scale800: string,
+  scale850: string,
+  scale900: string,
+  scale950: string,
+  scale1000: string,
+  scale1200: string,
+  scale1400: string,
+  scale1600: string,
+  scale2400: string,
+  scale3200: string,
+  scale4800: string,
+}
