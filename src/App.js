@@ -1,9 +1,9 @@
 // @flow
 import React, {Fragment} from 'react'
 import PageWrapper from './components/PageWrapper'
-import {Button, IconPosition, Size} from './components/NewButton/'
+import {Button, IconPosition, Size, Variant} from './components/NewButton/'
 import {Row, Col} from './components/Grid'
-import {ArrowRight} from './components/Icon'
+import {ArrowRight, Search} from './components/Icon'
 
 function App() {
   return (
@@ -11,12 +11,27 @@ function App() {
       <PageWrapper>
         <p>Hello</p>
         <Row>
-          <Col>
+          <Col lg={4}>
             <Button
-              icon={<ArrowRight color="#fff" />}
-              iconPosition={IconPosition.Left}
-              size={Size.Sm}
+              size={Size.Lg}
+              icon={<ArrowRight color="#fff" size={24} />}
+              variant={Variant.Primary}
             >
+              Button
+            </Button>
+          </Col>
+          <Col lg={4}>
+            <Button
+              size={Size.Lg}
+              icon={<Search color="#000" size={20} />}
+              iconPosition={IconPosition.Left}
+              variant={Variant.Secondary}
+            >
+              Button
+            </Button>
+          </Col>
+          <Col lg={4}>
+            <Button size={Size.Sm} variant={Variant.Outline}>
               Button
             </Button>
           </Col>

@@ -10,11 +10,11 @@ export function getSharedProps({
   size,
 }: ButtonPropsT) {
   return {
-    $disabled: disabled,
-    $isLoading: isLoading,
-    $iconPosition: iconPosition,
-    $fluid: fluid,
-    $variant: variant,
-    $size: size,
+    disabled,
+    isLoading,
+    iconPosition,
+    fluid,
+    variant,
+    size,
   }
 }
