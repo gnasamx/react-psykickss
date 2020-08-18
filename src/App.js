@@ -22,7 +22,7 @@ function App() {
           </Col>
           <Col lg={4}>
             <Button
-              size={Size.Lg}
+              size={Size.Md}
               icon={<Search color="#000" size={20} />}
               iconPosition={IconPosition.Left}
               variant={Variant.Secondary}

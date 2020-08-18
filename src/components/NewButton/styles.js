@@ -13,9 +13,16 @@ const getIconPosition = iconPosition => {
 }
 
 const getPaddingStyles = ({size, theme}) => {
-  return size === Size.Sm
-    ? `${theme.sizing.scale200} ${theme.sizing.scale550}`
-    : `${theme.sizing.scale400} ${theme.sizing.scale650}`
+  switch (size) {
+    case Size.Sm:
+      return `${theme.sizing.scale200} ${theme.sizing.scale550}`
+    case Size.Md:
+      return `${theme.sizing.scale300} ${theme.sizing.scale650}`
+    case Size.Lg:
+      return `${theme.sizing.scale400} ${theme.sizing.scale750}`
+    default:
+      Object.freeze({})
+  }
 }
 
 const getFontStyles = ({size, theme}) => {
@@ -28,21 +35,57 @@ const getVariantStyles = ({variant, theme}) => {
   switch (variant) {
     case Variant.Primary:
       return {
-        color: theme.colors.white,
-        backgroundColor: theme.colors.purple500,
-        borderColor: theme.colors.purple500,
+        color: theme.colors.gray00,
+        backgroundColor: theme.colors.pink60,
+        borderColor: theme.colors.pink60,
+        ':hover': {
+          backgroundColor: theme.colors.pink70,
+          borderColor: theme.colors.pink70,
+        },
+        ':active': {
+          boxShadow: `${theme.colors.gray00} 0px 0px 0px 2px, ${theme.colors.pink20} 0px 0px 0px 4px`,
+          backgroundColor: theme.colors.pink70,
+        },
+        ':focus': {
+          outlineStyle: 'auto',
+          outlineWidth: theme.sizing.scale100,
+        },
       }
     case Variant.Secondary:
       return {
-        color: theme.colors.black,
-        backgroundColor: theme.colors.white,
-        borderColor: theme.colors.gray300,
+        color: theme.colors.gray100,
+        backgroundColor: theme.colors.gray00,
+        borderColor: theme.colors.gray40,
+        ':hover': {
+          backgroundColor: theme.colors.gray10,
+          borderColor: theme.colors.gray50,
+        },
+        ':active': {
+          boxShadow: `${theme.colors.gray00} 0px 0px 0px 2px, ${theme.colors.gray40} 0px 0px 0px 4px`,
+          backgroundColor: theme.colors.gray10,
+        },
+        ':focus': {
+          outlineStyle: 'auto',
+          outlineWidth: theme.sizing.scale100,
+        },
       }
     case Variant.Outline:
       return {
-        color: theme.colors.purple500,
-        backgroundColor: theme.colors.white,
-        borderColor: theme.colors.purple500,
+        color: theme.colors.pink60,
+        backgroundColor: theme.colors.gray00,
+        borderColor: theme.colors.pink60,
+        ':hover': {
+          backgroundColor: theme.colors.pink00,
+          borderColor: theme.colors.pink70,
+        },
+        ':active': {
+          boxShadow: `${theme.colors.gray00} 0px 0px 0px 2px, ${theme.colors.pink20} 0px 0px 0px 4px`,
+          backgroundColor: theme.colors.pink00,
+        },
+        ':focus': {
+          outlineStyle: 'auto',
+          outlineWidth: theme.sizing.scale100,
+        },
       }
     default:
       return Object.freeze({})
@@ -51,7 +94,7 @@ const getVariantStyles = ({variant, theme}) => {
 
 export const Button: ComponentType<SharedStylePropsT> = styled.button(
   ({fluid, iconPosition, size, variant, theme}) => ({
-    borderRadius: '3rem',
+    borderRadius: theme.sizing.scale800,
     display: 'flex',
     cursor: 'pointer',
     justifyContent: 'center',
@@ -74,4 +117,4 @@ export const Button: ComponentType<SharedStylePropsT> = styled.button(
 export const Space = styled.div`
   height: 1px;
   width: 0.5rem;
-`;
+`
