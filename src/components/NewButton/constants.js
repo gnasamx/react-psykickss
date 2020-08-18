@@ -6,6 +6,7 @@ export const IconPosition = {
 
 export const Size = {
   Sm: 'small',
+  Md: 'medium',
   Lg: 'large',
 }
 
