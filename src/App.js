@@ -11,28 +11,33 @@ function App() {
       <PageWrapper>
         <p>Hello</p>
         <Row>
-          <Col lg={4}>
+          <Col lg={3}>
             <Button
               size={Size.Lg}
               icon={<ArrowRight color="#fff" size={24} />}
               variant={Variant.Primary}
             >
-              Button
+              Primary
             </Button>
           </Col>
-          <Col lg={4}>
+          <Col lg={3}>
             <Button
               size={Size.Md}
-              icon={<Search color="#000" size={20} />}
+              icon={<Search color="#7B20F9" size={20} />}
               iconPosition={IconPosition.Left}
               variant={Variant.Secondary}
             >
-              Button
+              Secondary
             </Button>
           </Col>
-          <Col lg={4}>
+          <Col lg={3}>
             <Button size={Size.Sm} variant={Variant.Outline}>
-              Button
+              Outline
+            </Button>
+          </Col>
+          <Col lg={3}>
+            <Button size={Size.Md} variant={Variant.Light}>
+              Light
             </Button>
           </Col>
         </Row>
