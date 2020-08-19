@@ -21,4 +21,12 @@ export const Variant = {
   Primary: 'primary',
   Secondary: 'secondary',
   Outline: 'outline',
+  Light: 'light',
+}
+
+export const State = {
+  Default: 'default',
+  Active: 'active',
+  Focus: 'focus',
+  Hover: 'hover',
 }

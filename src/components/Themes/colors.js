@@ -1,5 +1,17 @@
 // @flow
-import type {ColorsT} from './types'
+import type {ColorsT, ColorsNameT} from './types'
+
+export const names: ColorsNameT = {
+  Pink: 'pink',
+  Red: 'red',
+  Orange: 'orange',
+  Green: 'green',
+  Teal: 'teal',
+  Blue: 'blue',
+  Indigo: 'indigo',
+  Purple: 'purple',
+  Gray: 'gray',
+}
 
 const colors: ColorsT = {
   pink00: '#FFFAFD',

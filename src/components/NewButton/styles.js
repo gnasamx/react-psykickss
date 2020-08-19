@@ -1,8 +1,10 @@
 // @flow
-import styled from 'styled-components'
-import {IconPosition, Size, Variant} from './constants'
-import type {SharedStylePropsT} from './types.js'
 import type {ComponentType} from 'react'
+import styled from 'styled-components'
+
+import {IconPosition, Size, Variant, State} from './constants'
+import type {SharedStylePropsT} from './types.js'
+import {applyPropertyStyle} from './utils'
 
 const getFludityStyles = fluid => {
   return fluid ? '100%' : 'auto'
@@ -31,20 +33,69 @@ const getFontStyles = ({size, theme}) => {
     : theme.typography.font1660020
 }
 
+const getBackgroundStyles = props => {
+  return applyPropertyStyle({property: 'background', ...props})
+}
+
+const getBorderStyles = props => {
+  return applyPropertyStyle({property: 'border', ...props})
+}
+
+const getColorStyles = props => {
+  return applyPropertyStyle({property: 'color', ...props})
+}
+
+const getBoxShadowStyles = props => {
+  return applyPropertyStyle({property: 'boxShadow', ...props})
+}
+
 const getVariantStyles = ({variant, theme}) => {
   switch (variant) {
     case Variant.Primary:
       return {
-        color: theme.colors.gray00,
-        backgroundColor: theme.colors.pink60,
-        borderColor: theme.colors.pink60,
+        color: getColorStyles({
+          variant: Variant.Primary,
+          theme,
+          state: State.Default,
+        }),
+        backgroundColor: getBackgroundStyles({
+          variant: Variant.Primary,
+          theme,
+          state: State.Default,
+        }),
+        borderColor: getBorderStyles({
+          variant: Variant.Primary,
+          theme,
+          state: State.Default,
+        }),
         ':hover': {
-          backgroundColor: theme.colors.pink70,
-          borderColor: theme.colors.pink70,
+          backgroundColor: getBackgroundStyles({
+            variant: Variant.Primary,
+            theme,
+            state: State.Hover,
+          }),
+          borderColor: getBorderStyles({
+            variant: Variant.Primary,
+            theme,
+            state: State.Hover,
+          }),
         },
         ':active': {
-          boxShadow: `${theme.colors.gray00} 0px 0px 0px 2px, ${theme.colors.pink20} 0px 0px 0px 4px`,
-          backgroundColor: theme.colors.pink70,
+          boxShadow: getBoxShadowStyles({
+            variant: Variant.Primary,
+            theme,
+            state: State.Active,
+          }),
+          backgroundColor: getBackgroundStyles({
+            variant: Variant.Primary,
+            theme,
+            state: State.Active,
+          }),
+          borderColor: getBorderStyles({
+            variant: Variant.Primary,
+            theme,
+            state: State.Active,
+          }),
         },
         ':focus': {
           outlineStyle: 'auto',
@@ -53,16 +104,49 @@ const getVariantStyles = ({variant, theme}) => {
       }
     case Variant.Secondary:
       return {
-        color: theme.colors.gray100,
-        backgroundColor: theme.colors.gray00,
-        borderColor: theme.colors.gray40,
+        color: getColorStyles({
+          variant: Variant.Secondary,
+          theme,
+          state: State.Default,
+        }),
+        backgroundColor: getBackgroundStyles({
+          variant: Variant.Secondary,
+          theme,
+          state: State.Default,
+        }),
+        borderColor: getBorderStyles({
+          variant: Variant.Secondary,
+          theme,
+          state: State.Default,
+        }),
         ':hover': {
-          backgroundColor: theme.colors.gray10,
-          borderColor: theme.colors.gray50,
+          backgroundColor: getBackgroundStyles({
+            variant: Variant.Secondary,
+            theme,
+            state: State.Hover,
+          }),
+          borderColor: getBorderStyles({
+            variant: Variant.Secondary,
+            theme,
+            state: State.Hover,
+          }),
         },
         ':active': {
-          boxShadow: `${theme.colors.gray00} 0px 0px 0px 2px, ${theme.colors.gray40} 0px 0px 0px 4px`,
-          backgroundColor: theme.colors.gray10,
+          boxShadow: getBoxShadowStyles({
+            variant: Variant.Secondary,
+            theme,
+            state: State.Active,
+          }),
+          backgroundColor: getBackgroundStyles({
+            variant: Variant.Secondary,
+            theme,
+            state: State.Active,
+          }),
+          borderColor: getBorderStyles({
+            variant: Variant.Secondary,
+            theme,
+            state: State.Active,
+          }),
         },
         ':focus': {
           outlineStyle: 'auto',
@@ -71,16 +155,88 @@ const getVariantStyles = ({variant, theme}) => {
       }
     case Variant.Outline:
       return {
-        color: theme.colors.pink60,
+        color: getColorStyles({
+          variant: Variant.Outline,
+          theme,
+          state: State.Default,
+        }),
         backgroundColor: theme.colors.gray00,
-        borderColor: theme.colors.pink60,
+        borderColor: getBorderStyles({
+          variant: Variant.Outline,
+          theme,
+          state: State.Default,
+        }),
         ':hover': {
           backgroundColor: theme.colors.pink00,
-          borderColor: theme.colors.pink70,
+          borderColor: getBorderStyles({
+            variant: Variant.Outline,
+            theme,
+            state: State.Hover,
+          }),
         },
         ':active': {
-          boxShadow: `${theme.colors.gray00} 0px 0px 0px 2px, ${theme.colors.pink20} 0px 0px 0px 4px`,
+          boxShadow: getBoxShadowStyles({
+            variant: Variant.Outline,
+            theme,
+            state: State.Active,
+          }),
           backgroundColor: theme.colors.pink00,
+          borderColor: getBorderStyles({
+            variant: Variant.Outline,
+            theme,
+            state: State.Active,
+          }),
+        },
+        ':focus': {
+          outlineStyle: 'auto',
+          outlineWidth: theme.sizing.scale100,
+        },
+      }
+    case Variant.Light:
+      return {
+        color: getColorStyles({
+          variant: Variant.Light,
+          theme,
+          state: State.Default,
+        }),
+        backgroundColor: getBackgroundStyles({
+          variant: Variant.Light,
+          theme,
+          state: State.Default,
+        }),
+        borderColor: getBorderStyles({
+          variant: Variant.Light,
+          theme,
+          state: State.Default,
+        }),
+        ':hover': {
+          backgroundColor: getBackgroundStyles({
+            variant: Variant.Light,
+            theme,
+            state: State.Hover,
+          }),
+          borderColor: getBorderStyles({
+            variant: Variant.Light,
+            theme,
+            state: State.Hover,
+          }),
+        },
+        ':active': {
+          boxShadow: getBoxShadowStyles({
+            variant: Variant.Light,
+            theme,
+            state: State.Active,
+          }),
+          backgroundColor: getBackgroundStyles({
+            variant: Variant.Light,
+            theme,
+            state: State.Active,
+          }),
+          borderColor: getBorderStyles({
+            variant: Variant.Light,
+            theme,
+            state: State.Active,
+          }),
         },
         ':focus': {
           outlineStyle: 'auto',
@@ -103,7 +259,7 @@ export const Button: ComponentType<SharedStylePropsT> = styled.button(
     borderStyle: 'solid',
     transitionDuration: '0.2s',
     transitionTimingFunction: 'ease-in-out',
-    transitionProperty: 'box-shadow',
+    transitionProperty: 'all',
     opacity: 1,
     outline: 'none',
     width: getFludityStyles(fluid),

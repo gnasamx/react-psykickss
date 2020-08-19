@@ -1,4 +1,8 @@
 // @flow
+
+export type BrandT = {
+  color: string,
+}
 export type SizingT = {
   scale0: string,
   scale100: string,
@@ -150,6 +154,18 @@ export type TypographyT = {
   font96600104: FontT,
   font96700100: FontT,
   font96700104: FontT,
+}
+
+export type ColorsNameT = {
+  Pink: string,
+  Red: string,
+  Orange: string,
+  Green: string,
+  Teal: string,
+  Blue: string,
+  Indigo: string,
+  Purple: string,
+  Gray: string,
 }
 
 export type ColorsT = {

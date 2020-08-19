@@ -21,3 +21,6 @@
 | type | Htmltype | HTML `type` attribute. |
 | value | String | In conjunction with the `input` prop, sets the button text. |
 | variant | Variant | New prop for design refresh. Specifies button variant background color. |
+
+todo:
+- set brand color as default prop for button.
