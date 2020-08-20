@@ -30,3 +30,7 @@ export const State = {
   Focus: 'focus',
   Hover: 'hover',
 }
+
+export const As = {
+  A: 'a',
+}

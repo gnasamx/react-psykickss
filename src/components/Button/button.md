@@ -11,7 +11,6 @@
 | icon | Icon | The icon to to display alongside text in a button |
 | iconPosition | Iconposition | Display the icon to the left or the right of the text. |
 | id | String | HTML id property. |
-| input | Boolean | Render as an `<input>`. |
 | isLoading | Boolean | Renders loading spinner in place of the button label. |
 | name | String | HTML name property. |
 | noWrap | Boolean | Prevent button text from wrapping. |

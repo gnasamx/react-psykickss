@@ -33,7 +33,8 @@ const getBorderStyles = props => {
   return applyPropertyStyle({property: 'border', ...props})
 }
 
-const getColorStyles = props => {
+export const getColorStyles = props => {
+  console.log('== called ')
   return applyPropertyStyle({property: 'color', ...props})
 }
 
@@ -241,10 +242,10 @@ const getVariantStyles = ({variant, theme}) => {
 }
 
 export const BaseButton: ComponentType<SharedStylePropsT> = styled.button(
-  ({size, fluid, variant, theme}) => ({
+  ({size, fluid, variant, as, theme}) => ({
     alignItems: 'center',
     cursor: 'pointer',
-    display: 'flex',
+    display: 'inline-flex',
     justifyContent: 'center',
     borderWidth: '1px',
     borderStyle: 'solid',
@@ -254,6 +255,7 @@ export const BaseButton: ComponentType<SharedStylePropsT> = styled.button(
     padding: getPaddingStyles({size, theme}),
     textDecoration: 'none',
     outline: 'none',
+    '-webkit-appearance': as === 'a' ? 'button-bevel!important' : 'button',
     transition: 'all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s',
     ...getVariantStyles({variant, theme}),
   }),

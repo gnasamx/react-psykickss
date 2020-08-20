@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from 'react'
+import React, {Fragment, useContext} from 'react'
 import {
   BaseButton,
   ButtonText,
@@ -8,8 +8,10 @@ import {
   IconWrapper,
 } from './styles'
 import type {ButtonPropsT} from './types'
-import {getSharedProps} from './utils'
 import Spinner from '../Spinner'
+import {getColorStyles} from './styles'
+import {State} from './constants'
+import {ThemeContext} from 'styled-components'
 
 export default function Button(props: ButtonPropsT) {
   const {
@@ -21,8 +23,16 @@ export default function Button(props: ButtonPropsT) {
     variant,
     children,
     icon,
+    as,
+    href,
   } = props
-  const sharedProps = getSharedProps(props)
+
+  const theme = useContext(ThemeContext)
+  const spinnerAccentColor = getColorStyles({
+    variant,
+    theme,
+    state: State.Default,
+  })
 
   return (
     <BaseButton
@@ -32,9 +42,11 @@ export default function Button(props: ButtonPropsT) {
       fluid={fluid}
       disabled={disabled}
       isLoading={isLoading}
+      as={as}
+      href={href}
     >
       <SpinnerWrapper isLoading={isLoading}>
-        <Spinner color="#fff" />
+        <Spinner color={spinnerAccentColor} />
       </SpinnerWrapper>
       <ButtonText isLoading={isLoading} iconPosition={iconPosition}>
         <span>{children}</span>

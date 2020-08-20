@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import {Variant, IconPosition, Size, Target, State} from './constants'
+import {Variant, IconPosition, Size, Target, State, As} from './constants'
 
 export type ButtonPropsT = {
   autoFocus?: boolean,
@@ -22,6 +22,7 @@ export type ButtonPropsT = {
   type?: 'submit' | 'reset' | 'button',
   value?: string,
   variant?: $Values<typeof Variant>,
+  as?: $Values<typeof As>,
 }
 
 export type SharedStylePropsT = {

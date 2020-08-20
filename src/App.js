@@ -1,7 +1,7 @@
 // @flow
 import React, {Fragment} from 'react'
 import PageWrapper from './components/PageWrapper'
-import {Button, IconPosition, Size, Variant} from './components/Button'
+import {Button, IconPosition, Size, Variant, As} from './components/Button'
 import {Row, Col} from './components/Grid'
 import {ArrowRight, Search} from './components/Icon'
 
@@ -17,12 +17,15 @@ function App() {
               size={Size.Lg}
               icon={<ArrowRight color="#fff" size={20} />}
               variant={Variant.Primary}
+              as={As.A}
+              href="#"
             >
               Primary
             </Button>
           </Col>
           <Col lg={3}>
             <Button
+              isLoading
               fluid
               size={Size.Md}
               icon={<Search color="#7B20F9" size={20} />}
@@ -33,12 +36,12 @@ function App() {
             </Button>
           </Col>
           <Col lg={3}>
-            <Button size={Size.Sm} variant={Variant.Outline}>
+            <Button isLoading size={Size.Sm} variant={Variant.Outline}>
               Outline
             </Button>
           </Col>
           <Col lg={3}>
-            <Button size={Size.Md} variant={Variant.Light}>
+            <Button isLoading size={Size.Md} variant={Variant.Light}>
               Light
             </Button>
           </Col>
