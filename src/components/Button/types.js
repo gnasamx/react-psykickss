@@ -4,7 +4,7 @@ import {Variant, IconPosition, Size, Target, State} from './constants'
 
 export type ButtonPropsT = {
   autoFocus?: boolean,
-  children: React$Node,
+  children?: React$Node,
   disabled?: boolean,
   download?: boolean,
   fluid?: boolean,
@@ -33,6 +33,8 @@ export type SharedStylePropsT = {
   disabled?: boolean,
   fluid?: boolean,
   iconPosition?: $Values<typeof IconPosition>,
+  state?: $Values<typeof State>,
+  theme?: any | mixed,
 }
 
 export type ApplyPropertyStyleT = {

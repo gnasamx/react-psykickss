@@ -1,5 +1,5 @@
-import { normalize } from "styled-normalize";
-import { createGlobalStyle } from "styled-components";
+import {normalize} from 'styled-normalize'
+import {createGlobalStyle} from 'styled-components'
 
 export default createGlobalStyle`
   ${normalize}
@@ -20,4 +20,4 @@ export default createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
   }
-`;
+`

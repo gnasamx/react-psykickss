@@ -1,7 +1,7 @@
 // @flow
 import React, {Fragment} from 'react'
 import PageWrapper from './components/PageWrapper'
-import {Button, IconPosition, Size, Variant} from './components/NewButton/'
+import {Button, IconPosition, Size, Variant} from './components/Button'
 import {Row, Col} from './components/Grid'
 import {ArrowRight, Search} from './components/Icon'
 
@@ -13,8 +13,9 @@ function App() {
         <Row>
           <Col lg={3}>
             <Button
+              isLoading={false}
               size={Size.Lg}
-              icon={<ArrowRight color="#fff" size={24} />}
+              icon={<ArrowRight color="#fff" size={20} />}
               variant={Variant.Primary}
             >
               Primary
@@ -22,6 +23,7 @@ function App() {
           </Col>
           <Col lg={3}>
             <Button
+              fluid
               size={Size.Md}
               icon={<Search color="#7B20F9" size={20} />}
               iconPosition={IconPosition.Left}
