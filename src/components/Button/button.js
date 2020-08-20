@@ -50,9 +50,9 @@ export default function Button(props: ButtonPropsT) {
       </SpinnerWrapper>
       <ButtonText isLoading={isLoading} iconPosition={iconPosition}>
         <span>{children}</span>
-        {!disabled && icon && (
+        {icon && (
           <Fragment>
-            {children && <Space />}
+            <Space />
             <IconWrapper>{icon}</IconWrapper>
           </Fragment>
         )}

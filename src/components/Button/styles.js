@@ -34,7 +34,6 @@ const getBorderStyles = props => {
 }
 
 export const getColorStyles = props => {
-  console.log('== called ')
   return applyPropertyStyle({property: 'color', ...props})
 }
 
@@ -42,7 +41,22 @@ const getBoxShadowStyles = props => {
   return applyPropertyStyle({property: 'boxShadow', ...props})
 }
 
-const getVariantStyles = ({variant, theme}) => {
+const getVariantStyles = ({variant, disabled, theme}) => {
+  if (disabled) {
+    if (variant === Variant.Outline || variant === Variant.Light) {
+      return {
+        color: theme.colors.gray60,
+        backgroundColor: theme.colors.gray00,
+        borderColor: theme.colors.gray20,
+      }
+    } else {
+      return {
+        color: theme.colors.gray60,
+        backgroundColor: theme.colors.gray20,
+        borderColor: theme.colors.gray20,
+      }
+    }
+  }
   switch (variant) {
     case Variant.Primary:
       return {
@@ -242,9 +256,9 @@ const getVariantStyles = ({variant, theme}) => {
 }
 
 export const BaseButton: ComponentType<SharedStylePropsT> = styled.button(
-  ({size, fluid, variant, as, theme}) => ({
+  ({size, fluid, variant, as, disabled, theme}) => ({
     alignItems: 'center',
-    cursor: 'pointer',
+    cursor: disabled ? 'default' : 'pointer',
     display: 'inline-flex',
     justifyContent: 'center',
     borderWidth: '1px',
@@ -257,7 +271,7 @@ export const BaseButton: ComponentType<SharedStylePropsT> = styled.button(
     outline: 'none',
     '-webkit-appearance': as === 'a' ? 'button-bevel!important' : 'button',
     transition: 'all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s',
-    ...getVariantStyles({variant, theme}),
+    ...getVariantStyles({variant, disabled, theme}),
   }),
 )
 

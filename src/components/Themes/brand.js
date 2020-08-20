@@ -3,7 +3,7 @@ import {names} from './colors'
 import type {BrandT} from './types'
 
 const brand: BrandT = {
-  color: names.Purple,
+  color: names.Pink,
 }
 
 export default brand

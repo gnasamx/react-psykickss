@@ -13,19 +13,15 @@ function App() {
         <Row>
           <Col lg={3}>
             <Button
-              isLoading
               size={Size.Lg}
               icon={<ArrowRight color="#fff" size={20} />}
               variant={Variant.Primary}
-              as={As.A}
-              href="#"
             >
               Primary
             </Button>
           </Col>
           <Col lg={3}>
             <Button
-              isLoading
               fluid
               size={Size.Md}
               icon={<Search color="#7B20F9" size={20} />}
@@ -36,12 +32,12 @@ function App() {
             </Button>
           </Col>
           <Col lg={3}>
-            <Button isLoading size={Size.Sm} variant={Variant.Outline}>
+            <Button size={Size.Sm} variant={Variant.Outline}>
               Outline
             </Button>
           </Col>
           <Col lg={3}>
-            <Button isLoading size={Size.Md} variant={Variant.Light}>
+            <Button size={Size.Md} variant={Variant.Light}>
               Light
             </Button>
           </Col>
