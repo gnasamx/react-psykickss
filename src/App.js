@@ -13,7 +13,7 @@ function App() {
         <Row>
           <Col lg={3}>
             <Button
-              isLoading={false}
+              isLoading
               size={Size.Lg}
               icon={<ArrowRight color="#fff" size={20} />}
               variant={Variant.Primary}

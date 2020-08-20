@@ -248,6 +248,7 @@ export const BaseButton: ComponentType<SharedStylePropsT> = styled.button(
     justifyContent: 'center',
     borderWidth: '1px',
     borderStyle: 'solid',
+    position: 'relative',
     width: fluid ? '100%' : 'auto',
     borderRadius: theme.sizing.scale4800,
     padding: getPaddingStyles({size, theme}),
